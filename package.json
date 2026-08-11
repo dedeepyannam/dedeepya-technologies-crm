@@ -1,0 +1,19 @@
+{
+  "name": "crm-system",
+  "version": "1.0.0",
+  "description": "Enterprise Customer Relationship Management (CRM) System",
+  "main": "server/src/index.js",
+  "scripts": {
+    "server": "cmd /c \"cd server && npm run dev\"",
+    "client": "cmd /c \"cd client && npm run dev\"",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "install:all": "cmd /c \"cd server && npm install\" && cmd /c \"cd client && npm install\"",
+    "seed": "cmd /c \"cd server && npm run seed\""
+  },
+  "keywords": ["crm", "react", "express", "postgresql", "sales-pipeline"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

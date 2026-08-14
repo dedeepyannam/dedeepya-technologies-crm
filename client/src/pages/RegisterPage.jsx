@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { Building2, UserPlus, Mail, Lock, User, Briefcase } from 'lucide-react';
 
@@ -205,7 +205,7 @@ const RegisterPage = () => {
 
         <div style={{ textAlign: 'center', marginTop: '1.5rem', fontSize: '0.85rem' }}>
           <span style={{ color: 'var(--text-secondary)' }}>Already have an account? </span>
-          <a href="/login" style={{ color: '#818cf8', textDecoration: 'none', fontWeight: 600 }}>Sign in instead</a>
+          <Link to="/login" style={{ color: '#818cf8', textDecoration: 'none', fontWeight: 600 }}>Sign in instead</Link>
         </div>
       </div>
     </div>

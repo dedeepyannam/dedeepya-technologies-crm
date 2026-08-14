@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { Building2, ShieldCheck, Lock } from 'lucide-react';
 
@@ -120,7 +120,7 @@ const LoginPage = () => {
 
         <div style={{ textAlign: 'center', marginTop: '1.5rem', fontSize: '0.85rem' }}>
           <span style={{ color: 'var(--text-secondary)' }}>Don't have an account? </span>
-          <a href="/register" style={{ color: '#818cf8', textDecoration: 'none', fontWeight: 600 }}>Create one now</a>
+          <Link to="/register" style={{ color: '#818cf8', textDecoration: 'none', fontWeight: 600 }}>Create one now</Link>
         </div>
 
         {/* Enterprise Role Quick Switcher Helper */}

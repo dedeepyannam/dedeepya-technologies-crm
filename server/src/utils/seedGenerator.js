@@ -18,23 +18,17 @@ const generateSeed = async () => {
   };
 
   const hashedPassword = await bcrypt.hash('password123', 10);
+  const now = new Date().toISOString();
 
-  // 1. Users (10)
-  // 1 Admin, 2 Managers, 7 Execs
-  const roles = ['Admin', 'Sales Manager', 'Sales Manager', ...Array(7).fill('Sales Executive')];
-  roles.forEach((role, idx) => {
-    data.users.push({
-      id: idx + 1,
-      first_name: faker.person.firstName(),
-      last_name: faker.person.lastName(),
-      email: idx === 0 ? 'admin@crm.com' : faker.internet.email(),
-      password_hash: hashedPassword,
-      role: role,
-      manager_id: role === 'Sales Executive' ? faker.helpers.arrayElement([2, 3]) : null,
-      is_active: true,
-      created_at: faker.date.past().toISOString()
-    });
-  });
+  // 1. Users — 5 specific named users
+  data.users = [
+    { id: 1, first_name: 'Dedeepya', last_name: 'Yannam', email: 'dedeepya@dedeepyatechnologies.com', password_hash: hashedPassword, role: 'Admin',           manager_id: null, phone: '+91 9000000001', is_active: true, created_at: now, updated_at: now },
+    { id: 2, first_name: 'Rahul',    last_name: 'Sharma', email: 'rahul@dedeepyatechnologies.com',    password_hash: hashedPassword, role: 'Sales Manager',   manager_id: 1,    phone: '+91 9000000002', is_active: true, created_at: now, updated_at: now },
+    { id: 3, first_name: 'Priya',    last_name: 'Reddy',  email: 'priya@dedeepyatechnologies.com',    password_hash: hashedPassword, role: 'Sales Executive', manager_id: 2,    phone: '+91 9000000003', is_active: true, created_at: now, updated_at: now },
+    { id: 4, first_name: 'Arjun',    last_name: 'Kumar',  email: 'arjun@dedeepyatechnologies.com',    password_hash: hashedPassword, role: 'Sales Executive', manager_id: 2,    phone: '+91 9000000004', is_active: true, created_at: now, updated_at: now },
+    { id: 5, first_name: 'Sneha',    last_name: 'Rao',    email: 'sneha@dedeepyatechnologies.com',    password_hash: hashedPassword, role: 'Sales Executive', manager_id: 2,    phone: '+91 9000000005', is_active: true, created_at: now, updated_at: now },
+  ];
+
 
   const execIds = data.users.filter(u => u.role === 'Sales Executive').map(u => u.id);
 

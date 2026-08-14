@@ -7,8 +7,10 @@
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
     "seed": "node src/utils/seed.js",
+    "seed-users": "node src/utils/seedUsers.js",
     "seed-dedeepya": "node src/utils/dedeepyaSeed.js",
     "generate-seed": "node src/utils/seedGenerator.js"
+
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

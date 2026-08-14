@@ -137,11 +137,11 @@ const initMemoryStore = async () => {
   const now = new Date().toISOString();
 
   memoryDb.users = [
-    { id: 1, first_name: 'Sarah',  last_name: 'Connor',  email: 'admin@crm.com',   password_hash: passwordHash, role: 'Admin',           manager_id: null, phone: '+1 555-0101', is_active: true, created_at: now, updated_at: now },
-    { id: 2, first_name: 'Marcus', last_name: 'Vance',   email: 'manager@crm.com', password_hash: passwordHash, role: 'Sales Manager',   manager_id: 1,    phone: '+1 555-0102', is_active: true, created_at: now, updated_at: now },
-    { id: 3, first_name: 'Alex',   last_name: 'Mercer',  email: 'alex@crm.com',    password_hash: passwordHash, role: 'Sales Executive', manager_id: 2,    phone: '+1 555-0103', is_active: true, created_at: now, updated_at: now },
-    { id: 4, first_name: 'Elena',  last_name: 'Rostova', email: 'elena@crm.com',   password_hash: passwordHash, role: 'Sales Executive', manager_id: 2,    phone: '+1 555-0104', is_active: true, created_at: now, updated_at: now },
-    { id: 5, first_name: 'David',  last_name: 'Kim',     email: 'david@crm.com',   password_hash: passwordHash, role: 'Sales Executive', manager_id: 2,    phone: '+1 555-0105', is_active: true, created_at: now, updated_at: now },
+    { id: 1, first_name: 'Dedeepya', last_name: 'Yannam', email: 'dedeepya@dedeepyatechnologies.com', password_hash: passwordHash, role: 'Admin',           manager_id: null, phone: '+91 9000000001', is_active: true, created_at: now, updated_at: now },
+    { id: 2, first_name: 'Rahul',    last_name: 'Sharma', email: 'rahul@dedeepyatechnologies.com',    password_hash: passwordHash, role: 'Sales Manager',   manager_id: 1,    phone: '+91 9000000002', is_active: true, created_at: now, updated_at: now },
+    { id: 3, first_name: 'Priya',    last_name: 'Reddy',  email: 'priya@dedeepyatechnologies.com',    password_hash: passwordHash, role: 'Sales Executive', manager_id: 2,    phone: '+91 9000000003', is_active: true, created_at: now, updated_at: now },
+    { id: 4, first_name: 'Arjun',    last_name: 'Kumar',  email: 'arjun@dedeepyatechnologies.com',    password_hash: passwordHash, role: 'Sales Executive', manager_id: 2,    phone: '+91 9000000004', is_active: true, created_at: now, updated_at: now },
+    { id: 5, first_name: 'Sneha',    last_name: 'Rao',    email: 'sneha@dedeepyatechnologies.com',    password_hash: passwordHash, role: 'Sales Executive', manager_id: 2,    phone: '+91 9000000005', is_active: true, created_at: now, updated_at: now },
   ];
 
   memoryDb.customers = [

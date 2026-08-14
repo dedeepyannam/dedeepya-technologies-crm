@@ -9,6 +9,7 @@ const RegisterPage = () => {
     last_name: '',
     email: '',
     password: '',
+    confirm_password: '',
     role: 'Sales Executive'
   });
   const [error, setError] = useState('');
@@ -24,17 +25,31 @@ const RegisterPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
-    setLoading(true);
 
+    // Client-side validations
+    if (formData.password !== formData.confirm_password) {
+      setError('Passwords do not match. Please re-enter.');
+      return;
+    }
+    if (formData.password.length < 6) {
+      setError('Password must be at least 6 characters.');
+      return;
+    }
+
+    setLoading(true);
     try {
-      await register(formData);
+      // Strip confirm_password before sending; force role to Sales Executive for public registrations
+      const { confirm_password, ...payload } = formData;
+      payload.role = 'Sales Executive';
+      await register(payload);
       navigate('/dashboard');
     } catch (err) {
-      setError(err.response?.data?.error || err.response?.data?.errors?.[0]?.msg || 'Failed to register.');
+      setError(err.response?.data?.error || err.response?.data?.errors?.[0]?.msg || 'Failed to register. The email may already be in use.');
     } finally {
       setLoading(false);
     }
   };
+
 
   return (
     <div style={{
@@ -159,23 +174,23 @@ const RegisterPage = () => {
           </div>
 
           <div className="form-group">
-            <label className="form-label">Role</label>
+            <label className="form-label">Confirm Password</label>
             <div style={{ position: 'relative' }}>
-              <Briefcase size={16} style={{ position: 'absolute', top: '10px', left: '12px', color: 'var(--text-muted)' }} />
-              <select 
-                name="role"
+              <Lock size={16} style={{ position: 'absolute', top: '10px', left: '12px', color: 'var(--text-muted)' }} />
+              <input 
+                type="password" 
+                name="confirm_password"
                 className="form-input"
-                style={{ paddingLeft: '2.5rem', backgroundColor: 'var(--bg-dark)' }}
-                value={formData.role}
+                style={{ paddingLeft: '2.5rem' }}
+                value={formData.confirm_password}
                 onChange={handleChange}
+                placeholder="••••••••"
                 required
-              >
-                <option value="Sales Executive">Sales Executive</option>
-                <option value="Sales Manager">Sales Manager</option>
-                <option value="Admin">Admin</option>
-              </select>
+                minLength={6}
+              />
             </div>
           </div>
+
 
           <button 
             type="submit" 

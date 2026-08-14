@@ -39,13 +39,26 @@ const PORT = process.env.PORT || 5000;
 app.use(helmet());
 
 // Configure CORS
-const allowedOrigin =
-    process.env.CLIENT_URL || 'http://localhost:5173';
+// Configure CORS — allow localhost dev and Netlify production
+const allowedOrigins = [
+    'http://localhost:5173',
+    'http://localhost:3000',
+    'https://splendorous-rolypoly-7562b4.netlify.app',
+    process.env.CLIENT_URL,
+].filter(Boolean);
 
 app.use(cors({
-    origin: allowedOrigin,
+    origin: (origin, callback) => {
+        // Allow requests with no origin (mobile apps, curl, Postman)
+        if (!origin) return callback(null, true);
+        if (allowedOrigins.includes(origin)) {
+            return callback(null, true);
+        }
+        return callback(new Error(`CORS: Origin ${origin} not allowed`), false);
+    },
     credentials: true
 }));
+
 
 // Body Parser
 app.use(express.json());

@@ -159,6 +159,26 @@ const LoginPage = () => {
               <span>💼 Sales Executive (Priya Reddy)</span>
               <span className="role-tag role-executive">Executive</span>
             </button>
+
+            <button 
+              type="button" 
+              onClick={() => handleQuickLogin('arjun@dedeepyatechnologies.com')}
+              className="btn btn-secondary" 
+              style={{ fontSize: '0.8rem', justifyContent: 'space-between', padding: '0.5rem 0.75rem' }}
+            >
+              <span>💼 Sales Executive (Arjun Kumar)</span>
+              <span className="role-tag role-executive">Executive</span>
+            </button>
+
+            <button 
+              type="button" 
+              onClick={() => handleQuickLogin('sneha@dedeepyatechnologies.com')}
+              className="btn btn-secondary" 
+              style={{ fontSize: '0.8rem', justifyContent: 'space-between', padding: '0.5rem 0.75rem' }}
+            >
+              <span>💼 Sales Executive (Sneha Rao)</span>
+              <span className="role-tag role-executive">Executive</span>
+            </button>
           </div>
         </div>
       </div>

@@ -38,7 +38,7 @@ Before deploying, you must initialize the database schema:
    - `JWT_EXPIRES_IN`: `7d`
    - `CLIENT_URL`: *(Leave this blank for now, you will update it in Step 4)*
 5. Click **Create Web Service**.
-6. Once deployed, copy your Backend URL (e.g. `https://crm-backend.onrender.com`).
+6. Once deployed, copy your Backend URL (e.g. `https://dedeepya-crm-backend.onrender.com`).
 
 ---
 
@@ -55,7 +55,7 @@ Before deploying, you must initialize the database schema:
 4. Expand the **Environment Variables** section and add:
    - `VITE_API_BASE_URL`: `https://crm-backend.onrender.com/api/v1` *(Use the Backend URL from Step 2 + `/api/v1`)*
 5. Click **Deploy**.
-6. Once deployed, copy your Frontend URL (e.g. `https://crm-dashboard.vercel.app`).
+6. Once deployed, copy your Frontend URL (e.g. `dedeepya-technologies-a5aek4wyo-dedeepya-yannam.vercel.app`).
 
 ---
 
@@ -66,7 +66,7 @@ Now that you have your Frontend URL, you must update the backend CORS settings t
 1. Go back to your **Backend (Render) Web Service**.
 2. Navigate to **Environment**.
 3. Update or Add the `CLIENT_URL` environment variable:
-   - `CLIENT_URL`: `https://crm-dashboard.vercel.app` *(Your Vercel URL without a trailing slash)*
+   - `CLIENT_URL`: `dedeepya-technologies-a5aek4wyo-dedeepya-yannam.vercel.app` *(Your Vercel URL without a trailing slash)*
 4. Save the changes. Render will automatically redeploy the backend.
 
 ---

@@ -132,31 +132,31 @@ const LoginPage = () => {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             <button 
               type="button" 
-              onClick={() => handleQuickLogin('admin@crm.com')}
+              onClick={() => handleQuickLogin('dedeepya@dedeepyatechnologies.com')}
               className="btn btn-secondary" 
               style={{ fontSize: '0.8rem', justifyContent: 'space-between', padding: '0.5rem 0.75rem' }}
             >
-              <span>👑 Admin (Sarah Connor)</span>
+              <span>👑 Admin (Dedeepya Yannam)</span>
               <span className="role-tag role-admin">Admin</span>
             </button>
 
             <button 
               type="button" 
-              onClick={() => handleQuickLogin('manager@crm.com')}
+              onClick={() => handleQuickLogin('rahul@dedeepyatechnologies.com')}
               className="btn btn-secondary" 
               style={{ fontSize: '0.8rem', justifyContent: 'space-between', padding: '0.5rem 0.75rem' }}
             >
-              <span>👔 Sales Manager (Marcus Vance)</span>
+              <span>👔 Sales Manager (Rahul Sharma)</span>
               <span className="role-tag role-manager">Manager</span>
             </button>
 
             <button 
               type="button" 
-              onClick={() => handleQuickLogin('alex@crm.com')}
+              onClick={() => handleQuickLogin('priya@dedeepyatechnologies.com')}
               className="btn btn-secondary" 
               style={{ fontSize: '0.8rem', justifyContent: 'space-between', padding: '0.5rem 0.75rem' }}
             >
-              <span>💼 Sales Executive (Alex Mercer)</span>
+              <span>💼 Sales Executive (Priya Reddy)</span>
               <span className="role-tag role-executive">Executive</span>
             </button>
           </div>
